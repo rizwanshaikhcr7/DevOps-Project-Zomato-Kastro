@@ -134,7 +134,7 @@ pipeline {
         }
         stage ("Git Checkout") {
             steps {
-                git 'https://github.com/KastroVKiran/Zomato-Project-Kastro.git'
+                git 'https://github.com/rizwanshaikhcr7/DevOps-Project-Zomato-Kastro.git'
             }
         }
         stage("Sonarqube Analysis"){
@@ -148,7 +148,7 @@ pipeline {
         stage("Code Quality Gate"){
            steps {
                 script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token' 
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token' 
                 }
             } 
         }
